@@ -36,7 +36,7 @@ class LoginForm extends Component {
             style={{
               height: '100vh',
               marginTop: '0rem',
-              backgroundImage: "url(" + "https://wallpapercave.com/wp/OaCk2ys.jpg" + ")"
+              backgroundImage: "url(" + "https://steamuserimages-a.akamaihd.net/ugc/947335274825874694/46ED6B05486CB2F8C4F79A9C09DAAFE4DF9E5DB4/" + ")"
               // backgroundImage: "url(" + "https://wallpapercave.com/wp/OaCk2ys.jpg" + ")"
             }}
             verticalAlign='middle'>
@@ -52,7 +52,7 @@ class LoginForm extends Component {
                   width:'100%'
                 }}
                 color="red"
-                header='Electronic Appliance Ontology v1.0'
+                header='War Tanks Ontology v1.0'
                 description={[
                   'Lorem ipsum dolor sit amet, consectetur adipiscing,',
                   ' elit, sed do eiusmod tempor incididunt ut labore et dolore',
