@@ -28,12 +28,12 @@ class Content extends Component {
       }
 
       state = {
-        inputValue1: 'replace',
-        inputValue2: 'replace',
-        inputValue3: 'replace',
-        inputValue4: 'replace',
-        inputValue5: 'replace',
-        inputValue6: 'replace',
+        inputValue1: null,
+        inputValue2: null,
+        inputValue3: null,
+        inputValue4: null,
+        inputValue5: null,
+        inputValue6: null,
         showTable: false,
         productDrop1 : [
             { key: 'No Data', text: 'No Data', value: 'No Data' }
@@ -188,7 +188,7 @@ class Content extends Component {
                         </Form.Group>
                         <Form.Button
                             onClick={() => {
-                                this.props.getTestData(this.state.inputValue1, this.state.inputValue2, this.state.inputValue3, this.state.inputValue4)
+                                this.props.getTestData(this.state.inputValue1, this.state.inputValue2, this.state.inputValue3, this.state.inputValue4, this.state.inputValue5, this.state.inputValue6)
                                 this.setState({ showTable: true })
                             }}
                         >Search</Form.Button>
@@ -206,9 +206,9 @@ class Content extends Component {
                                    <Table.Body>
                                    {this.props && this.props.test && this.props.test.testlist && this.props.test.testlist ? this.props && this.props.test && this.props.test.testlist && this.props.test.testlist.map((obj,i)=>{
                                       return <Table.Row  key={i}>
-                                           <Table.Cell>{obj.subject.split("owl#")[1]}</Table.Cell>
-                                           <Table.Cell>{obj.subject.split("owl#")[1]}</Table.Cell>
-                                           <Table.Cell>{obj.subject.split("owl#")[1]}</Table.Cell>
+                                           <Table.Cell>{obj.tank}</Table.Cell>
+                                           <Table.Cell>{obj.price}</Table.Cell>
+                                           <Table.Cell>{obj.weight}</Table.Cell>
                                        </Table.Row>
                                    }): <Table.Row >
                                    <Table.Cell>No Data</Table.Cell>

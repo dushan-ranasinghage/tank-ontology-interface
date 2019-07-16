@@ -1,9 +1,8 @@
 import axios from 'axios'
 
-export function getTestData(dropVal1, dropVal2, dropVal3, dropVal4){
-  console.log("DROP VAL", dropVal1, dropVal2, dropVal3, dropVal4)
+export function getTestData(TankTypeVal, NationVal, ClanVal, GunVal, MapVal, CrewVal){
     return (dispatch) => {
-        axios.get("http://localhost:3050/GetSearch/"+dropVal1+"/"+dropVal2+"/"+dropVal3+"/"+dropVal4)
+        axios.get("http://localhost:8083/searchTanks?Nation="+NationVal+"&TankType="+TankTypeVal+"&Map="+MapVal+"&Gun="+GunVal+"&Clan="+ClanVal)
           .then(res => {
             dispatch({ type: 'GET_TEST', payload: res.data })
           })
