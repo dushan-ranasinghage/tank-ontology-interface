@@ -72,19 +72,26 @@ class Content extends Component {
                 const dropData5 = []
                 const dropData6 = []
                 subjectUrl.map((obj)=>{
-                    let x1 = obj.TankType
+                    if(obj.TankType){
+                        let x1 = obj.TankType
                     dropData1.push({key: x1, text: x1, value:x1})
-                    let x2 = obj.Nation
+                    } else if(obj.Nation){
+                        let x2 = obj.Nation
                     dropData2.push({key: x2, text: x2, value:x2})
-                    let x3 = obj.Clan
+                    } else if(obj.Clan){
+                        let x3 = obj.Clan
                     dropData3.push({key: x3, text: x3, value:x3})
-                    let x4 = obj.Gun
+                    } else if(obj.Gun){
+                        let x4 = obj.Gun
                     dropData4.push({key: x4, text: x4, value:x4})
-                    let x5 = obj.Map
+                    } else if(obj.Map){
+                        let x5 = obj.Map
                     dropData5.push({key: x5, text: x5, value:x5})
-                    let x6 = obj.Crew
+                    } else{
+                        let x6 = obj.Crew
                     dropData6.push({key: x6, text: x6, value:x6})
-                    console.log("Val From API", x1,x2,x3,x4,x5,x6)
+                    }
+                    // console.log("Val From API", x1,x2,x3,x4,x5,x6)
                 })
                 this.setState({ productDrop1: dropData1 })
                 this.setState({ productDrop2: dropData2 })
