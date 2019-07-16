@@ -28,12 +28,12 @@ class Content extends Component {
       }
 
       state = {
-        inputValue1: null,
-        inputValue2: null,
-        inputValue3: null,
-        inputValue4: null,
-        inputValue5: null,
-        inputValue6: null,
+        inputValue1: 'empty',
+        inputValue2: 'empty',
+        inputValue3: 'empty',
+        inputValue4: 'empty',
+        inputValue5: 'empty',
+        inputValue6: 'empty',
         showTable: false,
         productDrop1 : [
             { key: 'No Data', text: 'No Data', value: 'No Data' }
@@ -195,7 +195,7 @@ class Content extends Component {
                     </Form>
                            <Segment loading={false}>
                                <Table celled inverted selectable>
-                                   <Table.Header>
+                                   <Table.Header >
                                        <Table.Row>
                                            <Table.HeaderCell>Tank Name</Table.HeaderCell>
                                            <Table.HeaderCell>Price($)</Table.HeaderCell>
@@ -210,7 +210,7 @@ class Content extends Component {
                                            <Table.Cell>{obj.price}</Table.Cell>
                                            <Table.Cell>{obj.weight}</Table.Cell>
                                        </Table.Row>
-                                   }): <Table.Row >
+                                   }): <Table.Row style={{backgroundColor: '#404040'}}>
                                    <Table.Cell>No Data</Table.Cell>
                                    <Table.Cell>No Data</Table.Cell>
                                    <Table.Cell>No Data</Table.Cell>
