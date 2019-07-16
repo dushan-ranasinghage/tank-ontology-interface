@@ -28,12 +28,12 @@ class Content extends Component {
       }
 
       state = {
-        inputValue1: 'empty',
-        inputValue2: 'empty',
-        inputValue3: 'empty',
-        inputValue4: 'empty',
-        inputValue5: 'empty',
-        inputValue6: 'empty',
+        inputValue1: 'replace',
+        inputValue2: 'replace',
+        inputValue3: 'replace',
+        inputValue4: 'replace',
+        inputValue5: 'replace',
+        inputValue6: 'replace',
         showTable: false,
         productDrop1 : [
             { key: 'No Data', text: 'No Data', value: 'No Data' }
