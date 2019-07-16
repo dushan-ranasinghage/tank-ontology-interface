@@ -8,7 +8,8 @@ import {
   Segment,
   Form,
   Table,
-  Icon
+  Icon,
+  Button
 } from 'semantic-ui-react'
 import { withRouter } from 'react-router'
 import { getTestData } from '../actions/index'
@@ -56,12 +57,6 @@ class Content extends Component {
       }
 
     componentDidMount() {
-        // const test = [{"TankType":"LightTanks"},{"TankType":"HeavyTanks"},{"TankType":"NamedTanks"},
-        // {"TankType":"MediumTanks"},{"Gun":"SingleShotGuns"},{"Gun":"SemiAutomaticGuns"},{"Gun":"SelfProppelledGuns"},
-        // {"Gun":"AutoloadersGuns"},{"Gun":"AutocannonsGuns"},{"Clan":"USAClan"},{"Clan":"UKClan"},{"Clan":"RussianClan"},
-        // {"Clan":"JapanClan"},{"Clan":"GermanClan"},{"Crew":"RadioOperator"},{"Crew":"Loader"},{"Crew":"Gunner"},{"Crew":"Driver"},
-        // {"Crew":"Commander"},{"Map":"MountpassMap"},{"Map":"LakevilleMap"},{"Map":"KarellaMap"},{"Map":"CliffMap"},{"Map":"AbbeyMap"},
-        // {"Nation":"UnitedKingdom"},{"Nation":"USA"},{"Nation":"Russia"},{"Nation":"Japan"},{"Nation":"German"}];
         axios.get("http://localhost:8083/getSubClasses")
             .then(res => {
                 let subjectUrl = res.data
@@ -179,19 +174,20 @@ class Content extends Component {
                     </center>
                     <Form>
                         <Form.Group widths='equal'>
-                            <Form.Select fluid label='Tank Type' options={this.state.productDrop1} placeholder='Tank Type' onChange={this.handleChange1} />
-                            <Form.Select fluid label='Nation' options={this.state.productDrop2} placeholder='Nation' onChange={this.handleChange2} />
-                            <Form.Select fluid label='Clan' options={this.state.productDrop3} placeholder='Clan' onChange={this.handleChange3} />
-                            <Form.Select fluid label='Gun' options={this.state.productDrop4} placeholder='Gun' onChange={this.handleChange4} />
-                            <Form.Select fluid label='Map' options={this.state.productDrop5} placeholder='Map' onChange={this.handleChange5} />
-                            <Form.Select fluid label='Crew/Commander' options={this.state.productDrop6} placeholder='Crew/Commander' onChange={this.handleChange6} />
+                            <Form.Select selectOnBlur={false} fluid label='Tank Type' options={this.state.productDrop1} placeholder='Tank Type' onChange={this.handleChange1} />
+                            <Form.Select selectOnBlur={false} fluid label='Nation' options={this.state.productDrop2} placeholder='Nation' onChange={this.handleChange2} />
+                            <Form.Select selectOnBlur={false} fluid label='Clan' options={this.state.productDrop3} placeholder='Clan' onChange={this.handleChange3} />
+                            <Form.Select selectOnBlur={false} fluid label='Gun' options={this.state.productDrop4} placeholder='Gun' onChange={this.handleChange4} />
+                            <Form.Select selectOnBlur={false} fluid label='Map' options={this.state.productDrop5} placeholder='Map' onChange={this.handleChange5} />
+                            <Form.Select selectOnBlur={false} fluid label='Crew/Commander' options={this.state.productDrop6} placeholder='Crew/Commander' onChange={this.handleChange6} />
                         </Form.Group>
-                        <Form.Button
+                        <Button
                             onClick={() => {
                                 this.props.getTestData(this.state.inputValue1, this.state.inputValue2, this.state.inputValue3, this.state.inputValue4, this.state.inputValue5, this.state.inputValue6)
                                 this.setState({ showTable: true })
                             }}
-                        >Search</Form.Button>
+                        primary>Search</Button>
+                        <Button secondary >Reset</Button>
                     </Form>
                            <Segment loading={false}>
                                <Table celled inverted selectable>
