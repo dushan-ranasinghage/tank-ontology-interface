@@ -7,7 +7,8 @@ import {
   Menu,
   Segment,
   Form,
-  Table
+  Table,
+  Icon
 } from 'semantic-ui-react'
 import { withRouter } from 'react-router'
 import { getTestData } from '../actions/index'
@@ -154,13 +155,21 @@ class Content extends Component {
                 </Menu>
 
                 <Container text style={{ marginTop: '7em', minHeight: '100vh', minWidth: '1100px' }}>
-                    <Header as='h1'>War Tanks Ontology</Header>
+                    {/* <Header as='h1'>War Tanks Ontology</Header> */}
+                    <center>
+                        <Header as='h2' block>
+                            <Icon name='search' />
+                            <Header.Content>Search Tanks</Header.Content>
+                        </Header>
+                    </center>
                     <Form>
                         <Form.Group widths='equal'>
-                            <Form.Select fluid label='Brand' options={this.state.productDrop1} placeholder='Brand' onChange={this.handleChange1} />
-                            <Form.Select fluid label='Country' options={this.state.productDrop2} placeholder='Country' onChange={this.handleChange2} />
-                            <Form.Select fluid label='UsageType' options={this.state.productDrop3} placeholder='Type' onChange={this.handleChange3} />
-                            <Form.Select fluid label='ConsumerRating' options={this.state.productDrop4} placeholder='Rate' onChange={this.handleChange4} />
+                            <Form.Select fluid label='Tank Type' options={this.state.productDrop1} placeholder='Tank Type' onChange={this.handleChange1} />
+                            <Form.Select fluid label='Nation' options={this.state.productDrop2} placeholder='Nation' onChange={this.handleChange2} />
+                            <Form.Select fluid label='Clan' options={this.state.productDrop3} placeholder='Clan' onChange={this.handleChange3} />
+                            <Form.Select fluid label='Gun' options={this.state.productDrop4} placeholder='Gun' onChange={this.handleChange4} />
+                            <Form.Select fluid label='Map' options={this.state.productDrop4} placeholder='Map' onChange={this.handleChange4} />
+                            <Form.Select fluid label='Crew/Commander' options={this.state.productDrop4} placeholder='Crew/Commander' onChange={this.handleChange4} />
                         </Form.Group>
                         <Form.Button
                             onClick={() => {
@@ -173,7 +182,9 @@ class Content extends Component {
                                <Table celled inverted selectable>
                                    <Table.Header>
                                        <Table.Row>
-                                           <Table.HeaderCell>Product Name</Table.HeaderCell>
+                                           <Table.HeaderCell>Tank Name</Table.HeaderCell>
+                                           <Table.HeaderCell>Price($)</Table.HeaderCell>
+                                           <Table.HeaderCell>Weights(Tons)</Table.HeaderCell>
                                        </Table.Row>
                                    </Table.Header>
 
@@ -181,8 +192,12 @@ class Content extends Component {
                                    {this.props && this.props.test && this.props.test.testlist && this.props.test.testlist ? this.props && this.props.test && this.props.test.testlist && this.props.test.testlist.map((obj,i)=>{
                                       return <Table.Row  key={i}>
                                            <Table.Cell>{obj.subject.split("owl#")[1]}</Table.Cell>
+                                           <Table.Cell>{obj.subject.split("owl#")[1]}</Table.Cell>
+                                           <Table.Cell>{obj.subject.split("owl#")[1]}</Table.Cell>
                                        </Table.Row>
                                    }): <Table.Row >
+                                   <Table.Cell>No Data</Table.Cell>
+                                   <Table.Cell>No Data</Table.Cell>
                                    <Table.Cell>No Data</Table.Cell>
                                </Table.Row>}
                                    </Table.Body>
