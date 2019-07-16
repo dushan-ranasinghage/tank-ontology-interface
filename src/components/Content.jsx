@@ -23,6 +23,8 @@ class Content extends Component {
         this.handleChange2 = this.handleChange2.bind(this)
         this.handleChange3 = this.handleChange3.bind(this)
         this.handleChange4 = this.handleChange4.bind(this)
+        this.handleChange5 = this.handleChange5.bind(this)
+        this.handleChange6 = this.handleChange6.bind(this)
       }
 
       state = {
@@ -30,6 +32,8 @@ class Content extends Component {
         inputValue2: 'replace',
         inputValue3: 'replace',
         inputValue4: 'replace',
+        inputValue5: 'replace',
+        inputValue6: 'replace',
         showTable: false,
         productDrop1 : [
             { key: 'No Data', text: 'No Data', value: 'No Data' }
@@ -124,6 +128,20 @@ class Content extends Component {
           });
     }
 
+    handleChange5(e){
+        // console.log("Event Val", e.target.textContent)
+        this.setState({
+            inputValue5: e.target.textContent
+          });
+    }
+
+    handleChange6(e){
+        // console.log("Event Val", e.target.textContent)
+        this.setState({
+            inputValue6: e.target.textContent
+          });
+    }
+
     render() {
         console.log("Props", this.props)
         console.log("State", this.state)
@@ -158,8 +176,8 @@ class Content extends Component {
                             <Form.Select fluid label='Nation' options={this.state.productDrop2} placeholder='Nation' onChange={this.handleChange2} />
                             <Form.Select fluid label='Clan' options={this.state.productDrop3} placeholder='Clan' onChange={this.handleChange3} />
                             <Form.Select fluid label='Gun' options={this.state.productDrop4} placeholder='Gun' onChange={this.handleChange4} />
-                            <Form.Select fluid label='Map' options={this.state.productDrop4} placeholder='Map' onChange={this.handleChange4} />
-                            <Form.Select fluid label='Crew/Commander' options={this.state.productDrop4} placeholder='Crew/Commander' onChange={this.handleChange4} />
+                            <Form.Select fluid label='Map' options={this.state.productDrop5} placeholder='Map' onChange={this.handleChange5} />
+                            <Form.Select fluid label='Crew/Commander' options={this.state.productDrop6} placeholder='Crew/Commander' onChange={this.handleChange6} />
                         </Form.Group>
                         <Form.Button
                             onClick={() => {
