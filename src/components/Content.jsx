@@ -187,7 +187,9 @@ class Content extends Component {
                                 this.setState({ showTable: true })
                             }}
                         primary>Search</Button>
-                        <Button secondary >Reset</Button>
+                        <Button secondary 
+                        onClick={()=>window.location.reload()}
+                        >Reset</Button>
                     </Form>
                            <Segment loading={false}>
                                <Table celled inverted selectable>
